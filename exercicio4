@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+
+    float salarioAtual, salarioReajustado, bonus;
+    int tempoServico;
+
+    printf("Digite o salario atual do funcionario: ");
+    scanf("%f", &salarioAtual);
+
+    printf("Quantos anos de servico do funcionario: ");
+    scanf("%d", &tempoServico);
+
+    if (salarioAtual <= 1000) {
+        salarioReajustado = salarioAtual * 1.20;
+    } else if (salarioAtual <= 2000) {
+        salarioReajustado = salarioAtual * 1.15;
+    } else {
+        salarioReajustado = salarioAtual * 1.10;
+    }
+
+    if (tempoServico >= 10) {
+        bonus = 500;
+    } else if (tempoServico >= 5) {
+        bonus = 300;
+    } else {
+        bonus = 0;
+    }
+
+
+    if (salarioReajustado > salarioAtual) {
+        printf("O novo salario e: %.2f\n", salarioReajustado);
+    } else {
+        printf("O funcionário não tem direito a aumento.\n");
+    }
+
+    return 0;
+}
